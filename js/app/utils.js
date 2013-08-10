@@ -367,9 +367,11 @@ App.Utils = {
 			return dfd.promise();
 		},
 
-		flush: function(){
+		flush: function(all){
 			// Flushes all non-important values out of the cache
 			// - simplest way to do it for now
+
+			all = all || false;
 
 			console.log('flushing');
 
@@ -422,8 +424,7 @@ App.Utils = {
 						var i, key, remove = [];
 						for (i=0; i < window.localStorage.length ; i++) {
 							key = localStorage.key(i);
-							if (key.indexOf('critical_') !== 0) {
-								// console.info(key);
+							if (key.indexOf('critical_') !== 0 || all) {
 								remove.push(key);
 							}
 						}

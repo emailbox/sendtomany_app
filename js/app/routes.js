@@ -140,11 +140,8 @@ App.Router = Backbone.Router.extend({
 	logout: function(){
 		// Logout
 
-		// alert('Logging out');
-
 		// Reset user_token
-		localStorage.setItem('ui_user_token','');
-		
+		App.Utils.Storage.flush(true);
 		window.location = [location.protocol, '//', location.host, location.pathname].join('');
 
 	},
