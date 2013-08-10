@@ -128,6 +128,7 @@ App.Router = Backbone.Router.extend({
 
 		// Get the email data for this id (array key)
 
+		console.log(App.Data.recipients);
 		var page = new App.Views.PreviewSub({
 			id: id,
 			recipient: App.Data.recipients[id]

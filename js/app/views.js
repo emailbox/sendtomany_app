@@ -542,7 +542,7 @@ App.Views.Preview = Backbone.View.extend({
 	el: '#body_container',
 
 	events: {
-		'click .preview' : 'preview',
+		'click a.preview' : 'preview',
 		'click .remove' : 'remove_row',
 		'click .send_all' : 'send_all'
 	},
@@ -559,7 +559,7 @@ App.Views.Preview = Backbone.View.extend({
 		var elem = ev.currentTarget;
 
 		var id = $(elem).parents('.preview_recipient').attr('data-id');
-
+		
 		Backbone.history.loadUrl('preview_sending/' + id)
 
 		return false;
