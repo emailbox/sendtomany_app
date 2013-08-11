@@ -84,6 +84,7 @@ App.Views.Csv = Backbone.View.extend({
 
 	test: function(){
 		// Load from default
+		console.log(App.Data.UserEmailAccounts);
 		var parsed = JSON.parse('[["name","company","email"],["personName","companyName","'+App.Data.UserEmailAccounts.toJSON()[0].email+'"]]');
 		App.Data.parsed_csvdata = parsed;
 		Backbone.history.loadUrl('recipients')
